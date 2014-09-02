@@ -91,7 +91,7 @@ Ok, this is where it gets serious, the rest of the document addresses these poin
 Here are a few of the data sources we will be using:
 
     1. wikipedia.org (all languages)
-    2. openstreet.org
+    2. openstreetmap.org
     3. facebook.com
     4. mtrip.com (we already have some content)
     5. twitter.com
@@ -120,11 +120,11 @@ that you be able to explain why you selected a particular language over the othe
 ## Clustering data points: DBSCAN and feature selection
 In order to perform the clustering operation, the candidate algorithm to be used will be DBSCAN. Here is the [wiki
 entry on the subject](http://en.wikipedia.org/wiki/DBSCAN). You should skim the article in order to make the next 
-section more palatable.
+paragraph more palatable.
 
 Each data Point that we will collect will have a set of attributes (think geolocation, name, description etc). For 
 each of these sources, there may be a different set of possible attributes. For facebook.com, it might be {name, 
-latitude, longitude, opening hours, type} and for wikipedia it might be {lat, lon, category, name, image, introduction}
+latitude, longitude, opening hours, type} and for wikipedia.org it might be {lat, lon, category, name, image, introduction}
 . Based off these attributes you will have to define a feature vector computable for points coming from 
 *every sources*.  That feature vector is the input to the data clustering algorithm used. A possible feature vector 
 that can be constructed from the 2 example data sources could be 
@@ -139,18 +139,19 @@ process.
 There is one point that I wish to emphasize here. Figuring out a good feature vector is **hard**. Figuring out a
 good feature vector/distance measure combination is even harder. I expect that you will experiment a lot with 
 different combinations. It would therefore be wise to implement the clustering algorithm as a highher order function
-taking a distance function as input. In python (following the naming convention of the DBSCAN wiki articlle) this would 
+taking a distance function as input. In python (following the naming convention of the DBSCAN wiki article) this would 
 give the following function signature:
 
 ```python
 def dbscan(D, eps, MinPts, distance_fn=euclidian_norm):
-    # the algorithm uses the euclidiant norm by default but it's easy to switch distance function.
+    # the algorithm uses the euclidian norm by default but it's 
+    # easy to switch the distance function.
     ...
     return clusters
 ```
 
 The algorithm also cannot depend on a particular representation of the feature vector (e.g: you cannot rely on the
-fact that there is a "name" attribute in the dbscan algorithm implementation. You can however tie distance function
+fact that there is a "name" attribute in the dbscan algorithm implementation). You can however tie distance function
 implementation to a particular feature vector representation.
 
 ## Delivering the product: Milestones
