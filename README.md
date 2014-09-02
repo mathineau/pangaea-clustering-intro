@@ -3,48 +3,55 @@ Pangaea Clustering Intro
 This document is an introduction to the work you will be doing on the Pangaea Ultima Clustering component, which is 
 part of the larger Pangaea Ultima system, a so called "Big Data" application. The document is intended to give you a 
 "feel" for what the project is all about and to give you a broad overview of how the component you will be working on, 
-the data clustering layer, will fit in the final production system. Once you are done reading through this, you should
+the data clustering layer, will fit in the global system. Once you are done reading through this, you should
 have enough of a clue to stop picking your nose and start working.
 
 Any questions? let me know at pelletier at mtrip.com.
 
-Enjoy !
+Until then, grab a juice box, sit back and read on.
 
 # What is Pangaea Ultima ?
-Firstable, what is that Pangaea Ultima software system thing? To give you an answer, let me start by spelling out the 
-dryest, most arrid description that I can think of for what the system that we are trying to build should do. After 
-that mandatory bit of crisp, rigourous definition, we'll follow suit with examples of how the system should work once 
-we are done building it.
+Firstable, what is that Pangaea Ultima software system thing? To answer that kind of question, nothing works like a 
+crips and arrid description followed by an example
 
-Definition: Pangaea Ultima is the name of a suite of software components whose tasks is to extract information from an 
-heterogenous collection of data sources. The information thusly extracted is to be used as content for automated travel 
-guide generation. 
+Description: 
+> Pangaea Ultima is a suite of software components whose tasks is to extract information from an 
+> heterogenous collection of data sources. The information thusly extracted is to be used as content for automated 
+> travel guide generation. 
 
-If that sounds brutally simple and yet, awfully vague and ill defined, perhaps a concrete example would 
-lift your mood.
+If that sounds as clear and open to interpretation as a random article pulled out of a chineese tax law, do not 
+despair. I have crafted the perfect example to bring you to a happy level of enlightenment and is the subject of our 
+next section.
 
-## Pangaea Ultima from the ground up
-To illustrate the aforementioned concepts in action, imagine you have in your hand a hardcopy of your typical off the 
-shelf travel guide book. What's to be found inside? Well, the concept of a travel guide seems to be oriented around the
+# Pangaea Ultima from the ground up
+To illustrate the aforementioned Pangaea Ultima concepts in action, let us dissect the exhilarating day to day job of a
+travel guide 
+author. Perhaps it will help us gain some deeper insight as to what our described system should do. As a starter, 
+imagine you have in your hand a hardcopy of your typical off the 
+shelf travel guide book from our celebrated author. What's to be found inside? Well, the concept of a travel guide 
+seems to be oriented around the
 patentable idea of "things to see in X" where X can be a Country, a Province/State or a City. Suggestion of things to 
-see are diverse and can range from attractions such as the majestic Taj Mahal of India to the liver wrecking
-Oktoberfest festival In Munich. The defining point is that they are all within the boundary of a certain region of 
+see are diverse and can range from the majestic Taj Mahal of India to the liver wrecking Oktoberfest of 
+Munich. The defining point is that they are all within the boundary of a certain region of 
 interest (henceforth called ROI). 
 
-What else? Each of these "Things to see" have a certain set of attributes that are designed to help you make the 
-important decision of weither you should visit this place or stay in the hotel parlor and down a bottle
+What else? Each of these "Things to see" have a certain set of "attributes" for you to consider. These attributes are
+carefully engineered to help you make the 
+important decision of weither you should visit the place or stay in the hotel parlor and down a bottle
 of vodka with the lobby boy. These trip defining attributes usually boil down to the following few: a name, 
 a short description, 
 a nice color picture, perhaps a rating of some kind given by the adventurer who built the guide and, most importantly, 
-a coordinate set (latitude and longitude) to where the Point Of Interest (POI) under scrutiny is located. To generate 
+a coordinate set (latitude and longitude) to where the Point Of Interest (POI) under scrutiny is located. To "generate" 
 those attributes,
 the guide author obviously "cluster" and "merge" together information from different sources such as wikipedia.org, 
 openstreetmap.org or even facebook.com. The task of clustering is in this case identifying that a given wiki article
-and a given facebook page are talking about the same POI and the task of merging would be to take the arithmetic
+and a given facebook page are talking about the same POI. An example of merging would be to take the arithmetic
 mean of the sources latitude and longitude for the "real" geolocation of the POI.
 
 Thats great! so far so good. Three minutes into our 1.99$ world travel guide already makes it clear what we should aim 
-for when building our next google style web scalable travel guide system. Pangaea Ultima should be able to:
+for when building our next google style web scale travel guide system. Based on our analysis of the travel guide
+author workflow, an automated system aimed at replacing him without anyone beeing able to ever tell the difference 
+should be able to:
 
     1. Collect data about EVERYTHING that has a geolocation. Save that information to some datastore.
     2. Cluster the collected data into groups of complementary sources. Save computation result to some datastore.
@@ -52,19 +59,24 @@ for when building our next google style web scalable travel guide system. Pangae
     to some datastore.
     4. Create a travel guides by partitioning the created POI in different ROI. Save results to flat files.
 
-Of course an implicit requirement of the system is that the information it produces should be
-somewhat accurate. You would be pretty pissed off if, having followed the direction given by your 
-*romantic trip to paris*, you would be led into a turkey vulture infested patch of god forsaken land in the middle of 
-death valley. Other than that little accuracy constrain, if we manage to do these four things in a resonable 
-amount of time, we are right on the money. In a nutshell, that's all there is to the Pangaea Ultima System.
+Of course another requirement of the system that is valid at every steps of the process is that the information it 
+produces should be somewhat accurate. I imagine a customer would be pretty pissed off if, having followed the direction 
+given by your 
+*romantic trip to paris* guide, he would be led into a turkey vulture infested patch of god forsaken land in the middle 
+of death valley because of some geolocation error. Other than that little accuracy constrain, if we manage to do these 
+four things in a resonable amount of time, we are right on the money. In a nutshell, that's all there is to the 
+Pangaea Ultima System.
 
 # Pangaea Ultima Clustering component
 What we described so far is a complete system that gathers information, process it and produce new information.
 The scope of the overall project is too large to be done in a single project so I am delegating the implementation
 of the clustering part to you. If there remains any doubt as to what that clustering components you will be working on 
-should do, it's probably been diluted to homeopathic concentration by now but just in case: the pangaea-clustering 
-clustering component is responsible for *the clustering of collected data into groups of complementary sources*. The 
-things you do NOT yet know are: 
+should do, it's probably been diluted to homeopathic concentration by now, but just in case here it is again
+
+> the pangaea-clustering component is responsible for 
+> *the clustering of collected data into groups of complementary sources*. 
+
+The things you do NOT yet know are: 
 
     1. What are the different data sources we will use?
     2. What is the typical size of the data set we will use?
@@ -104,9 +116,15 @@ python, you will be on your own for deep technical issues related to either Java
 However, this is your project. I think you should be able to use the tools you see fit for the job so I will only ask
 that you be able to explain why you selected a particular language over the other.
 
-## Clustering data points: DBSCAN
+## Clustering data points: DBSCAN and feature selection
 In order to perform the clustering operation, the candidate algorithm to be used will be DBSCAN. Here is the [wiki
-entry on the subject](http://en.wikipedia.org/wiki/DBSCAN).
+entry on the subject](http://en.wikipedia.org/wiki/DBSCAN). 
+
+Each data Point that we will collect will have a set of attributes (say a geolocation, a name, and a description). For 
+each of these sources, there may be a different set of possible attributes. For facebook.com, it might be {name, 
+location, opening hours, type} and for wikipedia it might be {category, name, image, description}. For real data
+sources, you will have to define a feature vector computable for points coming from every sources. That feature vector 
+is the input to the data clustering algorithm used.
 
 ## Delivering the product: Milestones
 The project will be brought to a successful completion through the prototyping of milestones. Each milestone will be 
