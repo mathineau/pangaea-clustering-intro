@@ -27,7 +27,7 @@ in the next section.
 To illustrate the aforementioned Pangaea Ultima concepts in action, let us dissect the exhilarating day to day job of a
 travel guide 
 author. Perhaps it will help us gain some deeper insight as to what our described system should do and, at the very least
-, we will acquire some sympathy for the human condition. As a starter, 
+, we will acquire some empathy for the human condition. As a starter, 
 imagine you have in your hand a hardcopy of your typical off the 
 shelf travel guide book from our celebrated author. What's to be found inside? Well, the concept of a travel guide 
 seems to be oriented around the
