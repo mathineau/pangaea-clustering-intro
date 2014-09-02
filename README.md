@@ -11,7 +11,7 @@ Any questions? let me know at pelletier at mtrip.com.
 Until then, grab a juice box, sit back and read on.
 
 # What is Pangaea Ultima ?
-Firstable, what is that Pangaea Ultima software system thing? To answer that kind of question, nothing works like a 
+Firstable, what is that Pangaea Ultima software system thing? To answer that kind of question, nothing works better than a 
 crips and arrid description followed by an example
 
 Description: 
@@ -26,7 +26,8 @@ in the next section.
 # Pangaea Ultima from the ground up
 To illustrate the aforementioned Pangaea Ultima concepts in action, let us dissect the exhilarating day to day job of a
 travel guide 
-author. Perhaps it will help us gain some deeper insight as to what our described system should do. As a starter, 
+author. Perhaps it will help us gain some deeper insight as to what our described system should do and, at the very least
+, we will acquire some sympathy for the human condition. As a starter, 
 imagine you have in your hand a hardcopy of your typical off the 
 shelf travel guide book from our celebrated author. What's to be found inside? Well, the concept of a travel guide 
 seems to be oriented around the
