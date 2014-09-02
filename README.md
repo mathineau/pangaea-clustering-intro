@@ -142,8 +142,7 @@ different combinations. It would therefore be wise to implement the clustering a
 taking a distance function as input. In python (following the naming convention of the DBSCAN wiki articlle) this would 
 give the following function signature:
 
-python
-```
+```python
 def dbscan(D, eps, MinPts, distance_fn=euclidian_norm):
     # the algorithm uses the euclidiant norm by default but it's easy to switch distance function.
     ...
