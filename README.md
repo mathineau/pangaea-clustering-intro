@@ -38,7 +38,7 @@ interest (henceforth called ROI).
 
 What else? Each of these "Things to see" have a certain set of "attributes" for you to consider. These attributes are
 carefully engineered to help you make the 
-important decision of weither you should get up and visit the place or stay in the hotel parlor and down a bottle
+important decision of whether you should get up and visit the place or stay in the hotel parlor and down a bottle
 of vodka with the lobby boy. These trip defining attributes usually boil down to the following few: a name, 
 a short description, 
 a nice color picture, perhaps a rating of some kind given by the adventurer who built the guide and, most importantly, 
@@ -64,7 +64,7 @@ Of course another requirement of the system that is valid at every steps of the 
 produces should be somewhat accurate. I imagine a customer would be pretty pissed off if he, having followed the direction 
 given by your *romantic trip to paris* guide, would be led into a turkey vulture infested patch of god forsaken land 
 in the middle of death valley because of some geolocation error. Other than that little accuracy constrain, if we manage to do these 
-four things in a resonable amount of time, we are golden. In a nutshell, that's all there is to the 
+four things in a resonable amount of time, we are . In a nutshell, that's all there is to the 
 Pangaea Ultima System.
 
 # Pangaea Ultima Clustering component
