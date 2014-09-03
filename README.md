@@ -44,21 +44,20 @@ a short description,
 a nice color picture, perhaps a rating of some kind given by the adventurer who built the guide and, most importantly, 
 a coordinate set (latitude and longitude) to where the Point Of Interest (POI) under scrutiny is located. To "generate" 
 those attributes,
-the guide author obviously "cluster" and "merge" together information from different sources such as wikipedia.org, 
-openstreetmap.org or even facebook.com. The task of clustering is in this case identifying that a given wiki article
+the guide author "cluster" and "merge" together information from different sources such as wikipedia.org, 
+openstreetmap.org or even facebook.com. The task of clustering is, in this case, identifying that a given wiki article
 and a given facebook page are talking about the same POI. An example of merging would be to take the arithmetic
-mean of the sources latitude and longitude for the "real" geolocation of the POI.
+mean of the sources latitude and longitude to be the "real" geolocation of the POI.
 
 Thats great! so far so good. Three minutes into our 0.99$ world travel guide already makes it clear what we should aim 
 for when building our next google style web scale travel guide system. Based on our analysis of the travel guide
-author workflow, an automated system aimed at replacing him without anyone beeing able to ever tell the difference 
+author workflow, an automated system aimed at replacing him, without anyone beeing able to ever tell the difference, 
 should be able to:
 
-    1. Collect data about EVERYTHING that has a geolocation. Save that information to some datastore.
-    2. Cluster the collected data into groups of complementary sources. Save computation result to some datastore.
-    3. For each cluster of data, merge the data together into a coherent set of attributes. Save the computation result
-    to some datastore.
-    4. Create a travel guides by partitioning the created POI in different ROI. Save results to flat files.
+    1. Collect data about EVERYTHING that has a geolocation. 
+    2. Cluster the collected data into groups of complementary sources. 
+    3. For each cluster of data, merge the data together into a coherent set of attributes. 
+    4. Create a travel guides by partitioning the created POI in different ROI. 
 
 Of course another requirement of the system that is valid at every steps of the process is that the information it 
 produces should be somewhat accurate. I imagine a customer would be pretty pissed off if he, having followed the direction 
