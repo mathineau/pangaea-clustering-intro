@@ -140,7 +140,7 @@ latitude, longitude, opening hours, type} and for wikipedia.org it might be {lat
 . Based off these attributes you will have to define a feature vector computable for points coming from 
 *every sources*.  That feature vector is the input to the data clustering algorithm used. A possible feature vector 
 that can be constructed from the 2 example data sources could be 
-[category, latitude, longitude, class, mostCommonWordInDescription]. The point is that it should be possible, given a 
+[category, latitude, longitude, class, travelRelatedWordCount]. The point is that it should be possible, given a 
 vector of feature, to compute a neighbourhood of other vectors (or points) that are at a certain fixed distance or closer to it. 
 For that you will need to define a norm for your feature vector. When considering norm on vectors, one naturally thinks
 of the Eucledian Norm but it could be *anything* ranging from the 
