@@ -59,12 +59,13 @@ should be able to:
     3. For each cluster of data, merge the data together into a coherent set of attributes. 
     4. Create a travel guides by partitioning the created POI in different ROI. 
 
-Of course, another requirement of the system that should hold true at every steps of the process is that the information it 
-produces should be somewhat accurate. I imagine a customer would be pretty pissed off if he, having followed the direction 
+Of course, another requirement of the system that should hold true at every step of the process is that the information it 
+produces should be accurate. I imagine a customer would be pretty pissed off if he, having followed the direction 
 given by your *romantic trip to paris* guide, would be led into a turkey vulture infested patch of god forsaken land 
 in the middle of death valley because of some geolocation error. Other than that little accuracy constrain, if we manage to do these 
-four things in a resonable amount of time, we are . In a nutshell, that's all there is to the 
-Pangaea Ultima System.
+four steps in a resonable amount of time, we are golden. 
+
+In a nutshell, that's all there really is to the Pangaea Ultima System.
 
 # Pangaea Ultima Clustering component
 What we described so far is a complete system that gathers information, process it and produce new information.
