@@ -11,7 +11,8 @@ Any questions? let me know at pelletier at mtrip.com.
 Until then, grab a juice box, sit back and read on.
 
 # What is Pangaea Ultima ?
-Firstable, what is that Pangaea Ultima software system thing? To answer that kind of question, nothing works better than a 
+Firstable, what is that Pangaea Ultima software system thing? To answer that kind of question, nothing works better 
+than a 
 crips and arrid description followed by an example
 
 Description: 
@@ -26,7 +27,8 @@ in the next section.
 # Pangaea Ultima from the ground up
 To illustrate the aforementioned Pangaea Ultima concepts in action, let us dissect the exhilarating day to day job of a
 travel guide 
-author. Perhaps it will help us gain some deeper insight as to what our described system should do and, at the very least
+author. Perhaps it will help us gain some deeper insight as to what our described system should do and, at the very 
+least
 , we will acquire some empathy for the human condition. As a starter, 
 imagine you have in your hand a hardcopy of your typical off the 
 shelf travel guide book from our celebrated author. What's to be found inside? Well, the concept of a travel guide 
@@ -59,18 +61,22 @@ should be able to:
     3. For each cluster of data, merge the data together into a coherent set of attributes. 
     4. Create a travel guides by partitioning the created POI in different ROI. 
 
-Of course, another requirement of the system that should hold true at every step of the process is that the information it 
+Of course, another requirement of the system that should hold true at every step of the process is that the information 
+it 
 produces should be accurate. I imagine a customer would be pretty pissed off if he, having followed the direction 
 given by your *romantic trip to paris* guide, would be led into a turkey vulture infested patch of god forsaken land 
-in the middle of death valley because of some geolocation error. Other than that little accuracy constrain, if we manage to do these 
+in the middle of death valley because of some geolocation error. Other than that little accuracy constrain, if we 
+manage to do these 
 four steps in a resonable amount of time, we are golden. 
 
 In a nutshell, that's all there really is to the Pangaea Ultima System.
 
 # Pangaea Ultima Clustering component
-What we described so far is a complete system that gathers information, process it and produce new information.
-The scope of the overall project is too large to be done in a single semester so I am delegating the implementation
-of the clustering part to you. If there remains any doubt as to what that clustering components you will be working on 
+What we described so far is a complete system that gathers information, process it and produce new information in the 
+form
+of travel guide.  The scope of this overall project is too large to be done in a single semester so I am delegating the
+implementation
+of the clustering part to you. If there remains any doubt as to what that clustering component you will be working on 
 should do, it's probably been diluted to homeopathic concentration by now. Just in case, here it is again
 
 > the pangaea-clustering component is responsible for 
@@ -95,13 +101,17 @@ Here are a few of the data sources we will be using:
     4. mtrip.com (we already have some content)
     5. twitter.com
 
-This is not an exhaustive list.
+This is not an exhaustive list. 
+
+These sources are accessible over HTTP and return json documents representing data about different POI.
+
 
 ## Typical scale of the data
-We aim to build a system that can handle clustering of ~100 million points data set.
+We aim to build a system that can handle clustering of ~100 million points data set. POI information that we collect
+is spread out over the entire globe.
 
 ## The Target Platform: Apache Spark On EC2
-The target platform for pangaea-cluster is an Apache Spark cluster deployed on [Amazon Elastic Cloud Compute](http://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud).
+The target platform for pangaea-cluster will be an Apache Spark cluster deployed on [Amazon Elastic Cloud Compute](http://en.wikipedia.org/wiki/Amazon_Elastic_Compute_Cloud).
 The Apache Spark distribution includes handy scripts that will allow you to easily deploy Spark Cluster on EC2.
 When you are ready to start working, I will give you a set of AWS Access Credential for deploying your own clusters.
 You can familiarize yourself with Spark by taking a look at the project's page [here](https://spark.apache.org/).
@@ -128,29 +138,29 @@ latitude, longitude, opening hours, type} and for wikipedia.org it might be {lat
 *every sources*.  That feature vector is the input to the data clustering algorithm used. A possible feature vector 
 that can be constructed from the 2 example data sources could be 
 [category, latitude, longitude, class, mostCommonWordInDescription]. The point is that it should be possible, given a 
-vector of feature, to compute a neighbourhood of points that are at a certain fixed distance or closer to it. 
+vector of feature, to compute a neighbourhood of other vectors (or points) that are at a certain fixed distance or closer to it. 
 For that you will need to define a norm for your feature vector. When considering norm on vectors, one naturally thinks
 of the Eucledian Norm but it could be *anything* ranging from the 
 [manhattan distance](http://en.wikipedia.org/wiki/Taxicab_geometry) to a handcrafted 
-[decision tree](http://en.wikipedia.org/wiki/Decision_tree) that returns a distance based on a complex if-then-else 
+[decision tree](http://en.wikipedia.org/wiki/Decision_tree) that returns a norm based on a complex if-then-else 
 process.
 
 There is one point that I wish to emphasize here. Figuring out a good feature vector is **hard**. Figuring out a
-good feature vector/distance measure combination is even harder. I expect that you will experiment a lot with 
+good feature vector/norm measure combination is even harder. I expect that you will experiment a lot with 
 different combinations. It would therefore be wise to implement the clustering algorithm as a highher order function
-taking a distance function as input. In python (following the naming convention of the DBSCAN wiki article) this would 
+taking a norm function as input. In python (following the naming convention of the DBSCAN wiki article) this would 
 give the following function signature:
 
 ```python
-def dbscan(D, eps, MinPts, distance_fn=euclidian_norm):
+def dbscan(D, eps, MinPts, norm_fn=euclidian_norm):
     # the algorithm uses the euclidian norm by default but it's 
-    # easy to switch the distance function.
+    # easy to switch the norm function.
     ...
     return clusters
 ```
 
 The algorithm also cannot depend on a particular representation of the feature vector (e.g: you cannot rely on the
-fact that there is a "name" attribute in the dbscan algorithm implementation). You can however tie distance function
+fact that there is a "name" attribute in the dbscan algorithm implementation). You can however tie norm function
 implementation to a particular feature vector representation.
 
 ## Delivering the product: Milestones
