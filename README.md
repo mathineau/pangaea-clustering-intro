@@ -37,7 +37,7 @@ Munich. The defining point is that they are all within the boundary of a certain
 interest (henceforth called ROI). 
 
 What else? Each of these "Things to see" have a certain set of "attributes" for you to consider. These attributes are
-carefully engineered to help you make the 
+carefully engineered to help yu make the 
 important decision of whether you should get up and visit the place or stay in the hotel parlor and down a bottle
 of vodka with the lobby boy. These trip defining attributes usually boil down to the following few: a name, 
 a short description, 
