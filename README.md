@@ -1,7 +1,7 @@
 Pangaea Clustering Intro
 ========================
 This document is an introduction to the work you will be doing on the Pangaea Ultima Clustering component, which is 
-part of the larger Pangaea Ultima system, a so called "Big Data" application. The document is intended to give you a 
+part of the larger Pangaea Ultima system, a "Big Data" application. The document is intended to give you a 
 "feel" for what the project is all about and to give you a broad overview of how the component you will be working on, 
 the data clustering layer, will fit in the global system. Once you are done reading through this, you should
 have enough of a clue to stop picking your nose and start working.
