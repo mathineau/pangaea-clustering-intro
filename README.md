@@ -103,8 +103,11 @@ Here are a few of the data sources we will be using:
 
 This is not an exhaustive list. 
 
-These sources are accessible over HTTP and return json documents representing data about different POI.
+These sources are accessible over HTTP and return json documents representing data about different POI. 
 
+During the project, you will not be responsible for the acquisition of data. You will test your software with test data
+first (e.g: The [IRIS data set](https://archive.ics.uci.edu/ml/datasets/Iris)) and then I will give you data previously 
+extracted from these sources for testing purposes.
 
 ## Typical scale of the data
 We aim to build a system that can handle clustering of ~100 million points data set. POI information that we collect
