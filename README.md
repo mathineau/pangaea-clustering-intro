@@ -59,7 +59,7 @@ should be able to:
     3. For each cluster of data, merge the data together into a coherent set of attributes. 
     4. Create a travel guides by partitioning the created POI in different ROI. 
 
-Of course another requirement of the system that is valid at every steps of the process is that the information it 
+Of course, another requirement of the system that should hold true at every steps of the process is that the information it 
 produces should be somewhat accurate. I imagine a customer would be pretty pissed off if he, having followed the direction 
 given by your *romantic trip to paris* guide, would be led into a turkey vulture infested patch of god forsaken land 
 in the middle of death valley because of some geolocation error. Other than that little accuracy constrain, if we manage to do these 
