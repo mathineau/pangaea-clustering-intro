@@ -74,7 +74,7 @@ des valeurs de chacun des attributs.
 Le domaine de chacun des attributs est le suivant:
 
 1. lat : [-90,90]
-2. lon :[-180, 180]
+2. lon : [-180, 180]
 3. rating : [0,10]
 4. popularity : [0,100]
 
