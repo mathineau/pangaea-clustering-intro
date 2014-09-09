@@ -45,7 +45,7 @@ Valider le résultat du script avec votre outil de visualisation.
 Sont-ils conforment à vos attentes?
 
 ## Générateur de clusters
-Scriptez un générateur de données aléatoire qui génère des clusters de "POI" 
+Scriptez un générateur de données aléatoires qui génère des clusters de "POI" 
 (Point Of Interest) avec les attributs suivants:
 
 1. lat
