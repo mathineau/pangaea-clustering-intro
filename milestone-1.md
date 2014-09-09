@@ -18,7 +18,7 @@ Faire un script en python qui permet d'utiliser DBSCAN et qui lance
 l'algorithme sur des données qui sont dans un fichier .csv. Afin d'illustrer 
 le fonctionnement de votre script, utiliser le dataset [IRIS](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data).
 
-Votre script doit prendre en entrer le chemin d'un fichier csv avec
+Votre script doit prendre en entré le chemin d'un fichier csv avec
 les donnes et produire une collection de cluster. Les parametres de l'algo
 DBSCAN doivent être saisi comme paramètres en ligne de commande.
 
