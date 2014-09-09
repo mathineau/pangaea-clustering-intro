@@ -115,7 +115,7 @@ Décrivez qualitativement l'impact sur les données de l'utilisation de la
 métrique de distance manhattan sur la classification des données.
 
 ## Limite maximale
-Quelle est le nombre maximal de cluster qu'il vous est possible de
+Quel est le nombre maximal de clusters qu'il vous est possible de
 catégoriser dans un temps raisonnable? (15-20 mins).
 
 # Remise
