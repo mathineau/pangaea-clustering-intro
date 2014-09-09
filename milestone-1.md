@@ -27,13 +27,13 @@ exemple d'invocation du script:
 ```bash
 pangaea-local-dbscan.py my-iris-data.csv --eps=0.1 --min-pts=2 --distance='euclidian'
 ```
-Le format choisi pour representer les clusters est laissé à votre 
+Le format choisi pour représenter les clusters est laissé à votre 
 jugement.
 
 ### Notes
 1. Le script doit accepter au moins ces deux valeurs pour l'argument 
---distance: 'euclidian' et 'manhattan' qui implémente chacune des métriques
-respectivement.
+--distance: 'euclidian' et 'manhattan'. Votre script devra utiliser la métrique
+choisi par l'utilisateur.
 
 2. Pour votre script, vous n'avez pas à implementer l'algorithme DBSCAN vous 
 même, utiliser [sklearn](http://scikit-learn.org/stable/) !
