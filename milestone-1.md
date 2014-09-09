@@ -68,8 +68,8 @@ commande.
 Le nombre moyen de POI par cluster est donnée en ligne de commande.
 
 Les moyennes de chacune des distributions des attributs des clusters
-son obtenu de l'echantillonnement d'une distribution uniforme sur le domaine 
-des valeurs de chacun des atrributs.
+sont obtenu de l'échantillonnement d'une distribution uniforme sur le domaine 
+des valeurs de chacun des attributs.
 
 Le domaine de chacun des attributs est le suivant:
 
@@ -78,7 +78,7 @@ Le domaine de chacun des attributs est le suivant:
 3. rating dans  [0,10]
 4. popularity dans [0,100]
 
-Le generateur devra aussi inclure dans l'ensemble des données un
+Le générateur devra aussi inclure dans l'ensemble des données un
 'bruit de fond' qui correspond à un ensemble de N points dont les attributs
 sont uniformement distribué sur le domaine des attributs. Ce nombre N de points 
 doit être un argument du script.
@@ -91,32 +91,32 @@ pangaea-cluster-gen --nbr-cluster=100 --mean-points-per-cluster=5
 --rating-variance=3 --popularity-variance=10 --noise=1000
 ```
 
-Le script doit imprimer en sortie standard au format .csv les points generé. 
-et le resultat doit etre utilisable par votre script DBSCAN.
+Le script doit imprimer en sortie standard au format .csv les points géneré. 
+et le résultat doit être utilisable par votre script DBSCAN.
 
 ### Notes
-1. Vous pouvez choisir des valeurs par defaut afin de simplifier l'invocation
+1. Vous pouvez choisir des valeurs par défaut afin de simplifier l'invocation
 du script.
 
-2. Si le résultat de l'echantillonnement d'une distribution donne une valeure
-qui est hors du domaine de l'attribut, vous devez periodiser la valeur 
+2. Si le résultat de l'échantillonnement d'une distribution donne une valeure
+qui est hors du domaine d'un l'attribut, vous devez périodiser la valeure
 (e.g: une lat de 91 devient -90).
 
-## Géneration dataset test
-Utilisez Votre generateur de cluster pour générer des ensembles de tests de
-taille diverses (e.g: 10, 100, 1000, 10000 clusters) etc.
+## Géneration données de test
+Utilisez Votre générateur de cluster pour générer des ensembles de tests de
+tailles diverses (e.g: 10, 100, 1000, 10000 clusters) etc.
 
 ## Benchmark
 Calculez le temps requis afin d'effectuer le partionnement des données
 en fonction du nombre de cluster. Tracez une courbe log-log du résultat. 
 
 ## Euclidian vs Manhattan
-Decrivez qualitativement l'impact sur les données de l'utilisation de la 
-m.trique de distance manhattan sur la classification des donnes.
+Décrivez qualitativement l'impact sur les données de l'utilisation de la 
+métrique de distance manhattan sur la classification des données.
 
 ## Limite maximale
 Quelle est le nombre maximal de cluster qu'il vous est possible de
-catrgoriser dans un temps raisonnable? (15-20 mins).
+catégoriser dans un temps raisonnable? (15-20 mins).
 
 # Remise
 Sur github
