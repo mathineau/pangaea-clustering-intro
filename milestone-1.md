@@ -55,12 +55,12 @@ Scriptez un générateur de données aléatoires qui génère des clusters de "P
 
 La valeur des attributs des POI ainsi que le nombre de points par clusters doivent être
 normalement distribués. Sela signifie qu'à l'interne, votre générateur devra créer 4 distributions
-normales pour chacun des clusteurs a générer et une distribution
-normale qui sera échantillonné afin de savoir combien de points seront 
-généré pour chaque cluster. 
+normales pour chacun des clusteurs à générer et une distribution
+normale qui sera échantillonnée afin de savoir combiens de points seront 
+générés pour chaque cluster. 
 
-Les variances des distributions normales de chacun des attributs est donné en 
-ligne de commande et est la meme pour tous les clusters. 
+Les variances des distributions normales de chacun des attributs sont données en 
+ligne de commande et sont les même pour tous les clusters. 
 
 La variance du nombre de POI par cluster est donnée en ligne de
 commande. 
@@ -73,14 +73,14 @@ des valeurs de chacun des attributs.
 
 Le domaine de chacun des attributs est le suivant:
 
-1. lat dans [-90,90]
-2. lon dans [-180, 180]
-3. rating dans  [0,10]
-4. popularity dans [0,100]
+1. lat : [-90,90]
+2. lon :[-180, 180]
+3. rating : [0,10]
+4. popularity : [0,100]
 
 Le générateur devra aussi inclure dans l'ensemble des données un
-'bruit de fond' qui correspond à un ensemble de N points dont les attributs
-sont uniformement distribué sur le domaine des attributs. Ce nombre N de points 
+'bruit de fond' qui correspond à un ensemble de N points dont les valeurs
+sont uniformement distribués sur le domaine des attributs. Ce nombre N (--noise) de points 
 doit être un argument du script.
 
 L'invocation de votre script devrait donc ressembler à ceci:
@@ -91,8 +91,8 @@ pangaea-cluster-gen --nbr-cluster=100 --mean-points-per-cluster=5
 --rating-variance=3 --popularity-variance=10 --noise=1000
 ```
 
-Le script doit imprimer en sortie standard au format .csv les points géneré. 
-et le résultat doit être utilisable par votre script DBSCAN.
+Le script doit imprimer en sortie standard, au format .csv, les points génerés. 
+Le résultat doit être utilisable par votre script DBSCAN.
 
 ### Notes
 1. Vous pouvez choisir des valeurs par défaut afin de simplifier l'invocation
