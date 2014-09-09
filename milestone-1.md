@@ -73,10 +73,10 @@ des valeurs de chacun des attributs.
 
 Le domaine de chacun des attributs est le suivant:
 
-1. lat : [-90,90]
-2. lon : [-180, 180]
-3. rating : [0,10]
-4. popularity : [0,100]
+1. lat : [-90,90] (nombre réel)
+2. lon : [-180, 180] (nombre réel)
+3. rating : [0,10] (nombre entier)
+4. popularity : [0,100] (nombre entier)
 
 Le générateur devra aussi inclure dans l'ensemble des données un
 'bruit de fond' qui correspond à un ensemble de N points dont les valeurs
