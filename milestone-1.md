@@ -53,11 +53,11 @@ Scriptez un générateur de données aléatoire qui génère des clusters de "PO
 3. rating
 4. popularity
 
-Les attributs des POI ainsi que le nombre de points par clusters doivent être
-normalement distribué. A l'interne, votre generateur devra creer 4 distribution
-normales pour chacun des clusteurs a generer, et une distribution
-normale qui sera echantillonne afin de savoir combien de points seront 
-genere pour chaque cluster. 
+La valeur des attributs des POI ainsi que le nombre de points par clusters doivent être
+normalement distribués. Sela signifie que à l'interne, votre generateur devra créer 4 distributions
+normales pour chacun des clusteurs a générer et une distribution
+normale qui sera échantillonné afin de savoir combien de points seront 
+généré pour chaque cluster. 
 
 Les variances des distributions normales de chacun des attributs est donne en 
 ligne de commande et est la meme pour tous les clusters. 
