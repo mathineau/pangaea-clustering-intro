@@ -14,15 +14,15 @@ Temps requis: 3 semaines.
 [argparse](https://docs.python.org/2.7/library/argparse.html)
 
 ## Script DBSCAN local
-Faire un script en python qui permet d'utiliser DBSCAN et qui lance 
+Faites un script en python qui permet d'utiliser DBSCAN et qui lance 
 l'algorithme sur des données qui sont dans un fichier .csv. Afin d'illustrer 
 le fonctionnement de votre script, utiliser le dataset [IRIS](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data).
 
 Votre script doit prendre en entré le chemin d'un fichier csv avec
 les données et produire une collection de clusters. Les paramètres de l'algo
-DBSCAN doivent être saisi comme argument en ligne de commande.
+DBSCAN doivent être saisi comme arguments en ligne de commande.
 
-e.g.:
+exemple d'invocation du script:
 
 ```bash
 pangaea-local-dbscan.py my-iris-data.csv --eps=0.1 --min-pts=2 --distance='euclidian'
@@ -31,21 +31,21 @@ Le format choisi pour representer les clusters est laissé à votre
 jugement.
 
 ### Notes
-1. Le script doit accepter au moin ces deux valeurs pour l'argument 
---distance: 'euclidian' et 'manhattan' qui implemente chacune des métriques
+1. Le script doit accepter au moins ces deux valeurs pour l'argument 
+--distance: 'euclidian' et 'manhattan' qui implémente chacune des métriques
 respectivement.
 
 2. Pour votre script, vous n'avez pas à implementer l'algorithme DBSCAN vous 
 même, utiliser [sklearn](http://scikit-learn.org/stable/) !
 
 ## Visualisation
-Déterminer une manière de visualiser graphiquement les données ainsi que les
+Déterminez une manière de visualiser graphiquement les données ainsi que les
 résultats (projection 2D des donneés + couleurs?) de votre script DBSCAN. 
 Valider le résultat du script avec votre outil de visualisation. 
 Sont-ils conforment à vos attentes?
 
-## Générateur de cluster
-Scripter un générateur de données aléatoire qui génère des clusters de "POI" 
+## Générateur de clusters
+Scriptez un générateur de données aléatoire qui génère des clusters de "POI" 
 (Point Of Interest) avec les attributs suivants:
 
 1. lat
