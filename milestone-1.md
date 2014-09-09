@@ -35,13 +35,13 @@ jugement.
 --distance: 'euclidian' et 'manhattan'. Votre script devra utiliser la métrique
 choisi par l'utilisateur.
 
-2. Pour votre script, vous n'avez pas à implementer l'algorithme DBSCAN vous 
+2. Pour votre script, vous n'avez pas à implémenter l'algorithme DBSCAN vous 
 même, utiliser [sklearn](http://scikit-learn.org/stable/) !
 
 ## Visualisation
 Déterminez une manière de visualiser graphiquement les données ainsi que les
 résultats (projection 2D des donneés + couleurs?) de votre script DBSCAN. 
-Valider le résultat du script avec votre outil de visualisation. 
+Valider les résultats du script avec votre outil de visualisation. 
 Sont-ils conforment à vos attentes?
 
 ## Générateur de clusters
