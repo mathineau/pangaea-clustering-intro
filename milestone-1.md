@@ -16,7 +16,7 @@ Temps requis: 3 semaines.
 ## Script DBSCAN local
 Faire un script en python qui permet d'utiliser DBSCAN et qui lance 
 l'algorithme sur des données qui sont dans un fichier .csv. Afin d'illustrer 
-le fonctionnement de votre script, utiliser le dataset IRIS.
+le fonctionnement de votre script, utiliser le dataset [IRIS](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data).
 
 Votre script doit prendre en entrer le chemin d'un fichier csv avec
 les donnes et produire une collection de cluster. Les parametres de l'algo
@@ -112,7 +112,7 @@ en fonction du nombre de cluster. Tracez une courbe log-log du résultat.
 
 ## Euclidian vs Manhattan
 Decrivez qualitativement l'impact sur les données de l'utilisation de la 
-métrique de distance manhattan sur la classification des données.
+m.trique de distance manhattan sur la classification des donnes.
 
 ## Limite maximale
 Quelle est le nombre maximal de cluster qu'il vous est possible de
@@ -120,4 +120,3 @@ catrgoriser dans un temps raisonnable? (15-20 mins).
 
 # Remise
 Sur github
-
