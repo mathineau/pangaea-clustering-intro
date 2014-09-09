@@ -4,48 +4,48 @@ pangaea-utlima
 
 Temps requis: 3 semaines.
 
-# Enoncer
+# Enoncé
 
 ### Notes
 
 2. Utilisez python 2.x
 
-3. Pour la lecture des arguments en ligne de commandes en python, jetez un oeuil a
+3. Pour la lecture des arguments en ligne de commandes en python, jetez un oeuil à
 [argparse](https://docs.python.org/2.7/library/argparse.html)
 
 ## Script DBSCAN local
 Faire un script en python qui permet d'utiliser DBSCAN et qui lance 
-l'algorithme sur des donnees qui sont dans un fichier .csv. Afin d'illustrer 
+l'algorithme sur des données qui sont dans un fichier .csv. Afin d'illustrer 
 le fonctionnement de votre script, utiliser le dataset IRIS.
 
 Votre script doit prendre en entrer le chemin d'un fichier csv avec
 les donnes et produire une collection de cluster. Les parametres de l'algo
-DBSCAN doivent etre saisi comme parametres en ligne de commande.
+DBSCAN doivent être saisi comme paramètres en ligne de commande.
 
 e.g.:
 
 ```bash
 pangaea-local-dbscan.py my-iris-data.csv --eps=0.1 --min-pts=2 --distance='euclidian'
 ```
-Le format choisi pour representer les clusters est laisse a votre 
+Le format choisi pour representer les clusters est laissé à votre 
 jugement.
 
 ### Notes
 1. Le script doit accepter au moin ces deux valeurs pour l'argument 
---distance: 'euclidian' et 'manhattan' qui implemente chacune des metriques
+--distance: 'euclidian' et 'manhattan' qui implemente chacune des métriques
 respectivement.
 
-2. Pour votre script, vous n'avez pas a implementer l'algorithme DBSCAN vous 
-meme, utiliser [sklearn](http://scikit-learn.org/stable/) !
+2. Pour votre script, vous n'avez pas à implementer l'algorithme DBSCAN vous 
+même, utiliser [sklearn](http://scikit-learn.org/stable/) !
 
 ## Visualisation
-Determiner une maniere de visualiser graphiquement les donnes ainsi que les
-resultats (projection 2D des donnes + couleur?) de votre script DBSCAN. 
-Valider le resultat du script avec votre outil de visualisation. 
-Sont-ils conforment a vos attentes?
+Déterminer une manière de visualiser graphiquement les données ainsi que les
+résultats (projection 2D des donneés + couleurs?) de votre script DBSCAN. 
+Valider le résultat du script avec votre outil de visualisation. 
+Sont-ils conforment à vos attentes?
 
-## Generateur de cluster
-Faire un generateur de donnes aleatoire qui genere des clusters de "POI" 
+## Générateur de cluster
+Scripter un générateur de données aléatoire qui génère des clusters de "POI" 
 (Point Of Interest) avec les attributs suivants:
 
 1. lat
@@ -53,8 +53,8 @@ Faire un generateur de donnes aleatoire qui genere des clusters de "POI"
 3. rating
 4. popularity
 
-Les attributs des POI ainsi que le nombre de points par clusters doivent etre
-normalement distribue. A l'interne, votre generateur devra creer 4 distribution
+Les attributs des POI ainsi que le nombre de points par clusters doivent être
+normalement distribué. A l'interne, votre generateur devra creer 4 distribution
 normales pour chacun des clusteurs a generer, et une distribution
 normale qui sera echantillonne afin de savoir combien de points seront 
 genere pour chaque cluster. 
@@ -78,12 +78,12 @@ Le domaine de chacun des attributs est le suivant:
 3. rating in [0,10]
 4. popularity [0,100]
 
-Le generateur devra aussi inclure dans l'ensemble des donnes un
-'bruit de fond' qui correspond a un ensemble de N points dont les attributs
-sont uniformement distribue sur le domaine des attributs. Ce nombre N de points 
-doit etre un argument du script.
+Le generateur devra aussi inclure dans l'ensemble des données un
+'bruit de fond' qui correspond à un ensemble de N points dont les attributs
+sont uniformement distribué sur le domaine des attributs. Ce nombre N de points 
+doit être un argument du script.
 
-L'invocation de votre script devrait donc ressembler a ceci:
+L'invocation de votre script devrait donc ressembler à ceci:
 
 ```bash
 pangaea-cluster-gen --nbr-cluster=100 --mean-points-per-cluster=5
@@ -91,28 +91,28 @@ pangaea-cluster-gen --nbr-cluster=100 --mean-points-per-cluster=5
 --rating-variance=3 --popularity-variance=10 --noise=1000
 ```
 
-Le script doit imprimer en sortie standard au format .csv les points genere. 
+Le script doit imprimer en sortie standard au format .csv les points generé. 
 et le resultat doit etre utilisable par votre script DBSCAN.
 
 ### Notes
 1. Vous pouvez choisir des valeurs par defaut afin de simplifier l'invocation
 du script.
 
-2. Si le resultat de l'echantillonnement d'une distribution donne un resultat
+2. Si le résultat de l'echantillonnement d'une distribution donne une valeure
 qui est hors du domaine de l'attribut, vous devez periodiser la valeur 
 (e.g: une lat de 91 devient -90).
 
-## Generation dataset test
-Utiliser Votre generateur de cluster pour generer des ensembles de tests de
+## Géneration dataset test
+Utilisez Votre generateur de cluster pour générer des ensembles de tests de
 taille diverses (e.g: 10, 100, 1000, 10000 clusters) etc.
 
 ## Benchmark
-Calculer le temps requis afin d'effectuer le partionnement des donnes
-en fonction du nombre de cluster. tracer une courbe log-log du resultat. 
+Calculez le temps requis afin d'effectuer le partionnement des données
+en fonction du nombre de cluster. Tracez une courbe log-log du résultat. 
 
 ## Euclidian vs Manhattan
-Decriver qualitativement l'impact sur les donnes de l'utilisation de la 
-metrique de distance manhattan sur la classification des donnes.
+Decrivez qualitativement l'impact sur les données de l'utilisation de la 
+métrique de distance manhattan sur la classification des données.
 
 ## Limite maximale
 Quelle est le nombre maximal de cluster qu'il vous est possible de
@@ -120,3 +120,4 @@ catrgoriser dans un temps raisonnable? (15-20 mins).
 
 # Remise
 Sur github
+
