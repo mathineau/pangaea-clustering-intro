@@ -50,7 +50,7 @@ d'implémentation, le nombre de paramètres à spécifier etc.
 ### Choix de l'algorithme
 Choisissez un algorithme, parmis les candidats finalistes, que vous allez implémenter sur Apache Spark. Expliquer
 en détail pourquoi vous avez choisi cet algorithme. Si votre argumentation s'appuit sur des résultats que vous
-n'avez pas obtenus vous même (e.x.: compleité algorithmique) vous devez inclure les références vers ces résultats.
+n'avez pas obtenus vous même (e.x.: complexité algorithmique) vous devez inclure les références vers ces résultats.
 
 ## Implémentation locale Apache Spark
 Implémenter une version locale sur Apache Spark l'algorithme que vous avez sélectionnez. Validez vos résultats à l'aide 
