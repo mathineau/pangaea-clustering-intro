@@ -48,17 +48,15 @@ d'implémentation, le nombre de paramètres à spécifier etc.
 1. la taille de la liste des algorithmes finalistes est laissé à votre discrétion.
 
 ### Choix de l'algorithme
-Choisissez un algorithme ,parmis vos candidats finalistes, que vous allez implémenter sur Apache Spark. Expliquer
-en détail pourquoi vous avez choisi cet algorithme. Si vôtre argumentation s'appuit sur des résultats que vous
+Choisissez un algorithme, parmis les candidats finalistes, que vous allez implémenter sur Apache Spark. Expliquer
+en détail pourquoi vous avez choisi cet algorithme. Si votre argumentation s'appuit sur des résultats que vous
 n'avez pas obtenus vous même (e.x.: compleité algorithmique) vous devez inclure les références vers ces résultats.
 
 ## Implémentation locale Apache Spark
+Implémenter une version locale sur Apache Spark l'algorithme que vous avez sélectionnez. Validez vos résultats à l'aide 
+de l'implémentation de référence du framework ELKI.
 
 ### Notes
 1. En première passe et lorsque pertinent, vous pouvez implémenter l'algorithme sans structures de donnés spatiale
 afin de simplifier. Faites cependant en sorte qu'il soit facile de modifier le code afin d'inclure cette
 caractéristique dans une prochaine version.
-
-Implémenter une version locale sur Apache Spark l'algorithme que vous avez sélectionnez. Validez vos résultats à l'aide 
-de l'implémentation de référence du framework ELKI.
-
