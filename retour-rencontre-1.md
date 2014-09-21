@@ -24,6 +24,10 @@ le nombre de clusters. C'est le cas lorsque les données sont obtenus par votre 
 Cependant, en général, le nombre de clusters n'est pas connu à l'avance et le paramètre epsilon est estimé à
 partir de la variance des données.
 
+## Schéma BD
+Le schéma de la base de donnés ne vous sera pas utile dans le cadre du prochain livrable. Il vous sera
+donc donné plus tard dans le cadre du projet.
+
 ## Variance des attributs des données
 Après réflexion, je crois que vous avez raison et que l'aspect des variations de densités requiert plus 
 d'investigation. Nous allons donc continuer à travailler avec des clusters de 4 attributs de variance différentes.
@@ -32,5 +36,3 @@ de densité disparates.
 
 ## Remise Milestone 1
 Vous devrez remettre le code du milestone-1 à partir d'un entrepot github d'ici le 29 septembre 2014.
-
-
