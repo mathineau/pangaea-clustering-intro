@@ -40,8 +40,8 @@ milestone précédent, visualisation ELKI etc.).
 
 ### Algorithmes finalistes
 À partir des résultats de l'évaluation précédente, dresser une liste de candidats finals pour une future implémentation
-sur Apache Spark. Pour chacun des candidats de la liste, expliquer quel sont les avantages et inconvénients de 
-l'algorithme. Vous devez considérez des facteurs telles que la complexité algorithmique, la simplicité 
+sur Apache Spark. Pour chacun des candidats de la liste, expliquez quel sont les avantages et inconvénients de 
+l'algorithme. Vous devez considérer des facteurs telle que: la complexité algorithmique, la simplicité 
 d'implémentation, le nombre de paramètres à spécifier etc.
 
 #### Notes
