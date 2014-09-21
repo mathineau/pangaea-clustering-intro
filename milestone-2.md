@@ -4,7 +4,7 @@ pangaea-utlima
 # Second Milestone
 Date de remise du milestone: **Le Vendredi 24 Octobre 2014** 
 
-Modalité de remise: **code source et documents déposés sur un entrepôt github.**
+Modalité de remise: **code source et documents déposés sur un entrepôt github**
 
 # Enoncé
 
@@ -24,11 +24,9 @@ logiciel de forage de donnée [ELKI](http://elki.dbs.ifi.lmu.de/).
 Voici le cheminement suggéré afin d'évaluer les alternatives possibles à DBSCAN.
 
 ### Évaluation des algorithmes
-1. Générer des ensembles de données aléatoires de petite taille (environ 1000 points + bruit) avec votre
-générateur aléatoire de données. Vos ensembles de données devront avoir les charactéristiques suivantes:
+1. Générer des ensembles de données aléatoires de petite taille (environ 1000 points + bruit) avec votre générateur aléatoire de données. Vos ensembles de données devront avoir les charactéristiques suivantes:
 ..+ La variance de la latitude devra être égale à la variance de la longitude.
-..+ La variance de la popularité devra être différente de la variance du rating ainsi que de la variance
-    de la latitude et de la longitude.
+..+ La variance de la popularité devra être différente de la variance du rating ainsi que de la variance de la latitude et de la longitude.
 
 2. Appliquer les différents algorithmes pertinents du framework ELKI à votre jeu de donnés. 
 Les algorithmes à considérer doivent être des algorithmes qui ne nécessitent pas une connaissance préalable du nombre 
