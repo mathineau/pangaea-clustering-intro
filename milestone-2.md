@@ -1,122 +1,60 @@
 pangaea-utlima
 ==============
-# Premier Milestone
 
-Temps requis: 3 semaines.
+# Second Milestone
+Date de remise du milestone: Le Vendredi 24 Octobre 2014 
+Modalité de remise: code source et documents déposés sur un entrepôt github.
 
 # Enoncé
 
-### Notes
+## Introduction
+Lors de votre livrable précédent, vous avez identifié que la différence de densité (variance) des 
+attributs des points que l'on cherche à amalgamer peut être problématique à l'application de 
+l'algorithme DBSCAN. Ceci met en doute la pertinence du choix de l'algorithme car les jeux de donnés réels vont
+inévitablement contenir de telles différences de variances. Le But de ce milestone est donc d'identifier, d'appliquer 
+et d'implémenter localement des méthodes qui permettent de mitiger cet effet indésirable lors de la classification des 
+données.
 
-2. Utilisez python 2.x
+## Exploration d'alternative à DBSCAN
+Vous allez débuter votre travail par l'exploration de méthodes alternative de classification
+des donnés dans le cas de densités variables. Pour ce faire, vous allez utiliser le framework
+logiciel de forage de donnée [ELKI](http://elki.dbs.ifi.lmu.de/). 
 
-3. Pour la lecture des arguments en ligne de commandes en python, jetez un oeuil à
-[argparse](https://docs.python.org/2.7/library/argparse.html)
+Voici le cheminement suggéré afin d'évaluer les alternatives possibles à DBSCAN.
 
-## Script DBSCAN local
-Faites un script en python qui permet d'utiliser DBSCAN et qui lance 
-l'algorithme sur des données qui sont dans un fichier .csv. Afin d'illustrer 
-le fonctionnement de votre script, utiliser le dataset [IRIS](https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data).
+### Évaluation des algorithmes
+1. Générer des ensembles de données aléatoires de petite taille (environ 1000 points + bruit) avec votre
+générateur aléatoire de données. Vos ensembles de données devront avoir les charactéristiques suivantes:
+..+ La variance de la latitude devra être égale à la variance de la longitude.
+..+ La variance de la popularité devra être différente de la variance du rating ainsi que de la variance
+    de la latitude et de la longitude.
 
-Votre script doit prendre en entré le chemin d'un fichier csv avec
-les données et produire une collection de clusters. Les paramètres de l'algo
-DBSCAN doivent être saisi comme arguments en ligne de commande.
+2. Appliquer les différents algorithmes pertinents du framework ELKI à votre jeu de donnés. 
+Les algorithmes à considérer doivent être des algorithmes qui ne nécessitent pas une connaissance préalable du nombre 
+de clusters. Compte tenu du grand nombre d'algorithmes disponibles, vous devrez faire un certain travail de recherche 
+afin de présélectionner les algorithmes à évaluer.
 
-exemple d'invocation du script:
+3. Évaluer les résultats des différents algorithmes avec les outils à votre dispositions (visualisateur du
+milestone précédent, visualisation ELKI etc.).
 
-```bash
-pangaea-local-dbscan.py my-iris-data.csv --eps=0.1 --min-pts=2 --distance='euclidian'
-```
-Le format choisi pour représenter les clusters est laissé à votre 
-jugement.
+### Algorithmes finalistes
+À partir des résultats de l'évaluation précédente, dresser une liste de candidats finals pour une future implémentation
+sur Apache Spark. Pour chacun des candidats de la liste expliquer quel sont les avantages et inconvénients de 
+l'algorithme. Considérer des facteurs telles que la complexité algorithmique, la simplicité d'implémentation, le
+nombre de paramètre à spécifier etc.
 
-### Notes
-1. Le script doit accepter au moins ces deux valeurs pour l'argument 
---distance: 'euclidian' et 'manhattan'. Votre script devra utiliser la métrique
-choisi par l'utilisateur.
+### Choix de l'algorithme
+Choisissez un algorithme ,parmis vos candidats finalistes, que vous allez implémenter sur Apache Spark. Expliquer
+en détail pourquoi vous avez choisi cet algorithme. Si vôtre argumentation s'appuit sur des résultats que vous
+n'avez pas obtenus vous même (e.x.: compleité algorithmique) vous devez inclure les références vers ces résultats.
 
-2. Pour votre script, vous n'avez pas à implémenter l'algorithme DBSCAN vous 
-même, utiliser [sklearn](http://scikit-learn.org/stable/) !
-
-## Visualisation
-Déterminez une manière de visualiser graphiquement les données ainsi que les
-résultats (projection 2D des donneés + couleurs?) de votre script DBSCAN. 
-Valider les résultats du script avec votre outil de visualisation. 
-Sont-ils conforment à vos attentes?
-
-## Générateur de clusters
-Scriptez un générateur de données aléatoires qui génère des clusters de "POI" 
-(Point Of Interest) avec les attributs suivants:
-
-1. lat
-2. lon
-3. rating
-4. popularity
-
-La valeur des attributs des POI ainsi que le nombre de points par clusters doivent être
-normalement distribués. Sela signifie qu'à l'interne, votre générateur devra créer 4 distributions
-normales pour chacun des clusteurs à générer et une distribution
-normale qui sera échantillonnée afin de savoir combiens de points seront 
-générés pour chaque cluster. 
-
-Les variances des distributions normales de chacun des attributs sont données en 
-ligne de commande et sont les même pour tous les clusters. 
-
-La variance du nombre de POI par cluster est donnée en ligne de
-commande. 
-
-Le nombre moyen de POI par cluster est donnée en ligne de commande.
-
-Les moyennes de chacune des distributions des attributs des clusters
-sont obtenu de l'échantillonnement d'une distribution uniforme sur le domaine 
-des valeurs de chacun des attributs.
-
-Le domaine de chacun des attributs est le suivant:
-
-1. lat : [-90,90]  *nombre réel*
-2. lon : [-180, 180] *nombre réel*
-3. rating : [0,10] *nombre entier*
-4. popularity : [0,100] *nombre entier*
-
-Le générateur devra aussi inclure dans l'ensemble des données un
-'bruit de fond' qui correspond à un ensemble de N points dont les valeurs
-sont uniformement distribués sur le domaine des attributs. Ce nombre N (--noise) de points 
-doit être un argument du script.
-
-L'invocation de votre script devrait donc ressembler à ceci:
-
-```bash
-pangaea-cluster-gen --nbr-cluster=100 --mean-points-per-cluster=5
---cluster-size-variance=2 --lat-variance=0.01 --lon-variance=0.01 
---rating-variance=3 --popularity-variance=10 --noise=1000
-```
-
-Le script doit imprimer en sortie standard, au format .csv, les points génerés. 
-Le résultat doit être utilisable par votre script DBSCAN.
+## Implémentation locale Apache Spark
 
 ### Notes
-1. Vous pouvez choisir des valeurs par défaut afin de simplifier l'invocation
-du script.
+1. En première passe et lorsque pertinent, vous pouvez implémenter l'algorithme sans structures de donnés spatiale
+afin de simplifier. Faites cependant en sorte qu'il soit facile de modifier le code afin d'inclure cette
+caractéristique dans une prochaine version.
 
-2. Si le résultat de l'échantillonnement d'une distribution donne une valeure
-qui est hors du domaine d'un l'attribut, vous devez périodiser la valeure
-(e.g: une lat de 91 devient -90).
+Implémenter une version locale sur Apache Spark l'algorithme que vous avez sélectionnez. Validez vos résultats à l'aide 
+de l'implémentation de référence du framework ELKI.
 
-## Géneration données de test
-Utilisez Votre générateur de cluster pour générer des ensembles de tests de
-tailles diverses (e.g: 10, 100, 1000, 10000 clusters) etc.
-
-## Benchmark
-Calculez le temps requis afin d'effectuer le partionnement des données
-en fonction du nombre de cluster. Tracez une courbe log-log du résultat. 
-
-## Euclidian vs Manhattan
-Décrivez qualitativement l'impact sur les données de l'utilisation de la 
-métrique de distance manhattan sur la classification des données.
-
-## Limite maximale
-Quel est le nombre maximal de clusters qu'il vous est possible de
-catégoriser dans un temps raisonnable? (15-20 mins).
-
-# Remise
-Sur github
