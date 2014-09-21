@@ -26,8 +26,8 @@ Voici le cheminement suggéré afin d'évaluer les alternatives possibles à DBS
 ### Évaluation des algorithmes
 1. Générer des ensembles de données aléatoires de petite taille (environ 1000 points + bruit) avec votre générateur 
 aléatoire de données. Vos ensembles de données devront avoir les charactéristiques suivantes:
-  + La variance de la latitude devra être égale à la variance de la longitude.
-  + La variance de la popularité devra être différente de la variance du rating ainsi que de la variance de la latitude 
+  1. La variance de la latitude devra être égale à la variance de la longitude.
+  2. La variance de la popularité devra être différente de la variance du rating ainsi que de la variance de la latitude 
   et de la longitude.
 
 2. Appliquer les différents algorithmes pertinents du framework ELKI à votre jeu de donnés. 
