@@ -3,6 +3,7 @@ pangaea-utlima
 
 # Second Milestone
 Date de remise du milestone: **Le Vendredi 24 Octobre 2014** 
+
 Modalité de remise: **code source et documents déposés sur un entrepôt github.**
 
 # Enoncé
