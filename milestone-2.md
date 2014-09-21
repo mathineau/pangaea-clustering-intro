@@ -25,12 +25,12 @@ Voici le cheminement suggéré afin d'évaluer les alternatives possibles à DBS
 
 ### Évaluation des algorithmes
 1. Générer des ensembles de données aléatoires de petite taille (environ 1000 points + bruit) avec votre générateur 
-aléatoire de données. Vos ensembles de données devront avoir les charactéristiques suivantes:
+aléatoire de données. Vos ensembles de donnés devront avoir les charactéristiques suivantes:
   1. La variance de la latitude devra être égale à la variance de la longitude.
   2. La variance de la popularité devra être différente de la variance du rating ainsi que de la variance de la latitude 
   et de la longitude.
 
-2. Appliquer les différents algorithmes pertinents du framework ELKI à votre jeu de donnés. 
+2. Appliquer les différents algorithmes pertinents du framework ELKI à vos jeux de donnés. 
 Les algorithmes à considérer doivent être des algorithmes qui ne nécessitent pas une connaissance préalable du nombre 
 de clusters. Compte tenu du grand nombre d'algorithmes disponibles, vous devrez faire un certain travail de recherche 
 afin de présélectionner les algorithmes à évaluer.
@@ -40,9 +40,12 @@ milestone précédent, visualisation ELKI etc.).
 
 ### Algorithmes finalistes
 À partir des résultats de l'évaluation précédente, dresser une liste de candidats finals pour une future implémentation
-sur Apache Spark. Pour chacun des candidats de la liste expliquer quel sont les avantages et inconvénients de 
-l'algorithme. Considérer des facteurs telles que la complexité algorithmique, la simplicité d'implémentation, le
-nombre de paramètre à spécifier etc.
+sur Apache Spark. Pour chacun des candidats de la liste, expliquer quel sont les avantages et inconvénients de 
+l'algorithme. Vous devez considérez des facteurs telles que la complexité algorithmique, la simplicité 
+d'implémentation, le nombre de paramètres à spécifier etc.
+
+#### Notes
+1. la taille de la liste des algorithmes finalistes est laissé à votre discrétion.
 
 ### Choix de l'algorithme
 Choisissez un algorithme ,parmis vos candidats finalistes, que vous allez implémenter sur Apache Spark. Expliquer
