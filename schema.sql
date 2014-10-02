@@ -26,7 +26,7 @@ create table FOI (
     geometry geometry NOT NULL,
     url varchar(512) primary key,
     source varchar(512), -- the tld of the source of the FOI. De-normalized from url for performance.
-    attributes JSON,
+    attributes JSON
 );
 
 -- geometry indexes.
