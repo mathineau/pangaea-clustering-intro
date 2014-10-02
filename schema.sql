@@ -4,15 +4,15 @@
 --      create extension postgis;
 --      create extension postgis_topology;
 
--- Constains information about a group of stencil.
+-- Constains information about a group of stencil (Countries, Provinces/States, Cities etc.).
 create table STENCIL_GROUP (
-    name varchar(512) primary key,
+    name varchar(128) primary key,
     description text
 );
 
 -- Constains the Stencil used for guide generation. Stencils are grabbed from 
--- OSM via overpass (http://overpass-api.de/). For an example of stencil see
---  http://www.openstreetmap.org/relation/1428125
+-- OSM via overpass (http://overpass-api.de/). For an example of stencil, see
+-- http://www.openstreetmap.org/relation/1428125
 create table STENCIL (
     geometry geometry NOT NULL,
     url varchar(512) primary key,
@@ -35,10 +35,6 @@ create index foi_geometry on foi using gist(geometry);
 
 -- relation indexes.
 create index stencil_stencil_group on stencil using btree(stencil_group);
-
--- url indexes.
-create index stencil_url on stencil using btree(url);
-create index foi_url on foi using btree(url);
 
 -- source index.
 create index foi_source on foi using btree(source);
