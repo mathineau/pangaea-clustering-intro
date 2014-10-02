@@ -10,7 +10,9 @@ create table STENCIL_GROUP (
     description text
 );
 
--- Constains the Stencil used for guide generation.
+-- Constains the Stencil used for guide generation. Stencils are grabbed from 
+-- OSM via overpass (http://overpass-api.de/). For an example of stencil see
+--  http://www.openstreetmap.org/relation/1428125
 create table STENCIL (
     geometry geometry NOT NULL,
     url varchar(512) primary key,
@@ -25,7 +27,6 @@ create table FOI (
     url varchar(512) primary key,
     source varchar(512), -- the tld of the source of the FOI. De-normalized from url for performance.
     attributes JSON,
-    CONSTRAINT FOI_UNIQUE_URL Unique(url)
 );
 
 -- geometry indexes.
